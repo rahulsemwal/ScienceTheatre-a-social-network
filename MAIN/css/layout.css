@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+body{margin:0; padding:0; font-size:12px; font-family:Georgia, "Times New Roman", Times, serif; color:#919191; background-color:rgba(215, 212, 158, 0.42); color:#FFF;}
+/*modified background-color #fff to new color on 11/02/2015*/
+.layout{
+	width:100%;
+	height:auto;
+	background-color:rgba(130, 236, 228, 0.43);
+	}
+
+.text_center{ text-align:center;}
+.text_left{ text-align:left;}
+.text_right{ text-align:right;}
+.text_bold{ font-weight:bold;}
+.text_title{ font-size:14px;
+             font-weight:bold;}
+.text_heading{ font-size:16px;}		
+p{
+	margin-top:0;
+	margin-bottom:0;
+	word-wrap:break-word;}
+p a{
+	text-decoration:none;
+	opacity:.6;
+	
+	
+	}	
+p a:hover{
+	opecity:1;
+	
+	
+	}	
+/*td p{
+	
+	word-wrap:break-word;
+	
+	
+	}	*/
+
+

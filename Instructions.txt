@@ -1,0 +1,24 @@
+DEPLOYMENT INSTRUCTION:
+
+-- xampp verison 1.8.0
+-- mysql version 3.5.2
+-- http://www.phpmyadmin.net
+-- Server version: 5.5.25a
+-- PHP Version: 5.4.4
+
+RUN IN LOCAL:
+
+-- Must install xampp version 1.8.0, not later versions otherwise this project won't work properly
+-- It may contains the right mysql version to support this project
+-- Go to database in phpmyadmin "http://localhost/phpmyadmin/" portal
+-- 'create database project_x'
+-- Import project_x sql located at /DATABASE/project_x.sql 
+-- Run project at "http://localhost/<project_folder>/MAIN/"
+-- Register user and then login with that 
+-- Samples users for login 
+---User1: rahulsemwal@bucket.com, passwrd: rahulsemwal
+---User2: dheerajsharma@bucket.com, password: dheerajsharma
+-- post video, docs in HOME menu
+-- Ask query in QUERY menu
+-- See your activities and proile in MYDESK menu
+

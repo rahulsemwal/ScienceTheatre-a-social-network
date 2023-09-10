@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0086)http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android -->
+<html xmlns="http://www.w3.org/1999/xhtml" class=" "><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="Description" content="In Android, we can have drawings on a button, also we can put animated drawings on a button as well. Today we will show how to create an animated refresh button with an animated spinner on it.We need Pixelstech, this page is to provide vistors information of the most updated technology information around the world. And also, it will provide many useful tips on our further career pursuing and programming.Hope you can absord what you want from these valuable articles">
+<meta name="keywords" content="Pixelstech,Technical Articles,Animation,Spinner,Refresh button,Android">
+<link type="text/css" href="./Create animated refresh button in Android   Pixelstech.net_files/main.css" rel="stylesheet">
+<link type="text/css" href="./Create animated refresh button in Android   Pixelstech.net_files/article_index.css" rel="stylesheet">
+<link type="text/css" href="./Create animated refresh button in Android   Pixelstech.net_files/shCore.css" rel="stylesheet">
+<link type="text/css" href="./Create animated refresh button in Android   Pixelstech.net_files/shThemeDefault.css" rel="stylesheet">
+<link type="text/css" href="./Create animated refresh button in Android   Pixelstech.net_files/nprogress.css" rel="stylesheet">
+<link type="text/css" href="./Create animated refresh button in Android   Pixelstech.net_files/mobile.css" rel="stylesheet" media="(max-width: 1200px)">
+<link type="text/css" href="./Create animated refresh button in Android   Pixelstech.net_files/mobile-1000.css" rel="stylesheet" media="(max-width: 920px)">
+<title>Create animated refresh button in Android | Pixelstech.net</title>
+<script type="text/javascript" async="" src="./Create animated refresh button in Android   Pixelstech.net_files/ga.js"></script><script src="./Create animated refresh button in Android   Pixelstech.net_files/wb.js" type="text/javascript" charset="utf-8"></script>
+<script charset="UTF-8" src="./Create animated refresh button in Android   Pixelstech.net_files/bundle.js"></script><link rel="stylesheet" href="http://www.pixelstech.cn/js/tiny_mce/themes/advanced/skins/default/ui.css"><link rel="stylesheet" href="http://www.pixelstech.cn/js/tiny_mce/plugins/inlinepopups/skins/clearlooks2/window.css"><script charset="UTF-8" src="./Create animated refresh button in Android   Pixelstech.net_files/iframeWidget.js"></script></head>
+<body><iframe id="sina_anywhere_iframe" style="display: none;"></iframe>
+<a name="top"></a>
+<script type="text/javascript" src="./Create animated refresh button in Android   Pixelstech.net_files/main.js"></script>
+<!--Google Analytics-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24747848-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<div id="header">
+    <ul id="header_ul">
+        <!-- Logo-->
+        <li><a href="http://www.pixelstech.net/" style="padding:0;"><img src="./Create animated refresh button in Android   Pixelstech.net_files/logo.png" alt="PixelsTech Logo" id="header_logo"></a></li>
+        <li class="active-btn"><a href="http://www.pixelstech.net/article.php" title="Technical Article">Article</a></li>
+        <li><a href="http://www.pixelstech.net/topic.php" title="Discussion Zone">Discussion</a></li>
+        <li><a href="http://www.pixelstech.net/fun.php" title="Fun Zone">Fun</a></li>
+        <li id="download_menu_td" onmouseover="HeaderMenuManager.handleHeaderMenuSelect(event);" onmouseout="HeaderMenuManager.handleHeaderMenuDeselect(event);"><a href="http://www.pixelstech.net/download.php" title="Download" class="header_menu" submenu="header_download_menu">Download&nbsp;&nbsp;▼</a>
+          <ul id="header_download_menu" class="header_sub_menu">
+                      <li>
+                            <img src="./Create animated refresh button in Android   Pixelstech.net_files/1324814842DocumentMenu.gif" style="vertical-align:middle;" align="bottom" alt="Document">
+                            <a href="http://www.pixelstech.net/download/category.php?cat=3" title="Document"> Document</a>
+            </li>
+                                  <li>
+                            <img src="./Create animated refresh button in Android   Pixelstech.net_files/EbookMenu.gif" style="vertical-align:middle;" align="bottom" alt="eBook">
+                            <a href="http://www.pixelstech.net/download/category.php?cat=4" title="eBook"> eBook</a>
+            </li>
+                                  <li>
+                            <img src="./Create animated refresh button in Android   Pixelstech.net_files/SoftwareMenu.gif" style="vertical-align:middle;" align="bottom" alt="Software">
+                            <a href="http://www.pixelstech.net/download/category.php?cat=1" title="Software"> Software</a>
+            </li>
+                                  <li>
+                            <img src="./Create animated refresh button in Android   Pixelstech.net_files/1324815150SourceCodeMenu.gif" style="vertical-align:middle;" align="bottom" alt="Source Code">
+                            <a href="http://www.pixelstech.net/download/category.php?cat=2" title="Source Code"> Source Code</a>
+            </li>
+                                    </ul>
+        </li>
+        <li id="application_menu_td" onmouseover="HeaderMenuManager.handleHeaderMenuSelect(event);" onmouseout="HeaderMenuManager.handleHeaderMenuDeselect(event);"><a href="javascript:;" title="Application" class="header_menu" submenu="header_application_menu">Application&nbsp;&nbsp;▼</a>
+           <ul id="header_application_menu" class="header_sub_menu">
+           <li><img src="./Create animated refresh button in Android   Pixelstech.net_files/imager.gif" alt="Imager"><a href="http://www.pixelstech.net/application/index.php?app_name=imager" title="Image Converter">Image Converter</a></li>
+             <li><img src="./Create animated refresh button in Android   Pixelstech.net_files/profilestorer.gif" alt="Profile Storer"><a href="http://profilestorer.pixelstech.net/" title="Profile Storer">Profile Storer</a></li>           <li><img src="./Create animated refresh button in Android   Pixelstech.net_files/peditor.gif" alt="Pixels Editor"><a href="http://www.pixelstech.net/peditor/index.html" title="Pixels Editor">Pixels Editor</a></li>
+           <li><img src="./Create animated refresh button in Android   Pixelstech.net_files/ajaxtalker.gif" alt="Ajax Talker"><a href="http://www.pixelstech.net/chatter/index.php" title="Ajax Talker">Ajax Talker</a></li>
+           </ul>
+        </li>
+        <li><a href="http://www.pixelstech.net/calendar.php" title="My Calendar">MyCalendar</a></li>      
+        <li>
+              <div id="search_form_div">
+                <form id="search_form" action="http://www.pixelstech.net/search.php" method="post">
+                    <input type="text" name="key_word" value="" placeholder="Search keyword here...">
+                    <input type="submit" name="search" id="header_search_icon" value="" title="Search">
+                </form>
+              </div>
+          </li>
+        <li>
+       <!-- Account information-->
+       <div id="account_section" class="header-div">
+                    <a href="http://www.pixelstech.net/register.php" title="Register">Register</a>&nbsp;<a href="http://www.pixelstech.net/login.php" title="Log in">Login</a>&nbsp;<a href="http://www.pixelstech.net/feed.xml" title="Subscribe to RSS feeds" class="image-link"><img src="./Create animated refresh button in Android   Pixelstech.net_files/rss.png" alt="Subscribe to RSS feed" title="Subscribe to RSS feed"></a>&nbsp;<a href="http://www.feedly.com/home#subscription/feed/http://feeds.feedburner.com/pixelstech" title="Subscribe to feedly" target="_blank" class="image-link"><img src="./Create animated refresh button in Android   Pixelstech.net_files/feedly.png" alt="Subscribe to feedly" title="Subscribe to feedly"></a>
+                  </div>
+    </li>
+    </ul>
+</div>
+<div id="content_container">
+    <div class="content_container_padding"></div>
+    <!-- Topic pabel -->
+    <div id="topic_panel">
+        <table cellpadding="0" cellspacing="0">
+        <tbody><tr><td><b>Today's Question:&nbsp;</b></td><td>
+        <div id="question_panel">
+                <div id="question_description_panel">
+        <p style="text-align:right;margin:0;"><a href="javascript:System.hideItem('question_description_panel');" class="link_btn">Hide</a></p>
+        Today I was checking some library codes, and occasionally I was reading some codes written in 1999. That time I was still a primary school student. So I wonder how many years from now are the earliest code you have read? At that year, what were you doing?        </div>
+                    <a href="http://www.pixelstech.net/topic/121-How-many-years-from-now-are-the-earliest-code-you-read-" title="How many years from now are the earliest code you read?">How many years from now are the earliest code you read?</a>
+                </div>
+        </td>
+                <td>
+        <a href="javascript:System.showItem('question_description_panel');" class="link_btn_30">Description</a>
+        <a href="http://www.pixelstech.net/topic/index.php?topic_id=121#answer" class="link_btn_30">My Answer</a>
+        </td>
+          
+        </tr></tbody></table>
+    </div>
+<!-- Below is the page content container -->
+<p class="map_p"><a href="http://www.pixelstech.net/article.php">Technical Article</a>
+=&gt;&nbsp;<a href="http://www.pixelstech.net/article.php?type=7">Mobile</a>&nbsp;=&gt;&nbsp;<img src="./Create animated refresh button in Android   Pixelstech.net_files/android.jpg" style="vertical-align:middle;margin-bottom:3px;">&nbsp;<a href="http://www.pixelstech.net/article.php?type=7&article_type=18">Android</a>
+</p>
+<div id="main_body">
+	<div id="article_page_main">
+	    
+     <h2><p class="article_headline_p"> 
+     Create animated refresh button in Android</p></h2>
+     <p class="meta_info_p"><img src="./Create animated refresh button in Android   Pixelstech.net_files/IMG_4242.JPG" id="author_icon" class="img-circle">&nbsp;<a href="http://www.pixelstech.net/profile.php?user=sonic0002">sonic0002</a> 
+          <wb:follow-button uid="5121560761" type="red_1" width="67" height="24" style="display:inline-block;vertical-align:middle;"><iframe src="./Create animated refresh button in Android   Pixelstech.net_files/followbutton.htm" width="67" height="24" frameborder="0" scrolling="no" marginheight="0"></iframe></wb:follow-button>
+          &nbsp;&nbsp; Date : 2012-11-02 11:51:41&nbsp;&nbsp;<a href="http://www.pixelstech.net/backstage/article_pdf_generator.php?article_id=1351875079" target="_blank" title="Save as PDF"><img src="./Create animated refresh button in Android   Pixelstech.net_files/pdf.gif" style="vertical-align:middle;"></a>	 </p>
+	 <hr>
+	 <!--
+	 <center><a href="http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=sonic0002-"><img src="http://tracking.hostgator.com/img/Shared/468x60.gif" border="0"></a></center>
+     -->
+	 <div id="article_content_panel">
+     <p>In Android, we can have drawings on a button, also we can put animated drawings on a button as well. Today we will show how to create an animated refresh button with an animated spinner on it.</p>
+<p>We need to create an animated drawing first. Here we name it as progress.xml and put it in the res/drawable folder:</p>
+<p style="background-color: #eeeeee; display: block; padding: 10px;"><!--?xml version="1.0" encoding="utf-8"?-->&lt;?xml version="1.0" encoding="utf-8"?&gt;<br>&lt;animation-list xmlns:android="http://schemas.android.com/apk/res/android"<br>&nbsp;&nbsp;&nbsp; android:id="@+id/spin_refresh" android:oneshot="false"&gt;<br>&nbsp;&nbsp;&nbsp; &lt;item android:drawable="@drawable/ic_action_refresh1" android:duration="400" /&gt;<br>&nbsp;&nbsp; &nbsp;&lt;item android:drawable="@drawable/ic_action_refresh2" android:duration="400" /&gt;<br>&nbsp;&nbsp; &nbsp;&lt;item android:drawable="@drawable/ic_action_refresh1" android:duration="400" /&gt;<br>&nbsp;&nbsp; &nbsp;&lt;item android:drawable="@drawable/ic_action_refresh2" android:duration="400" /&gt;<br>&nbsp;&lt;/animation-list&gt;</p>
+<p>Here ic_action_refresh1 and&nbsp;ic_action_refresh2 are two spinner pictures in the same folder as the progress.xml file.</p>
+<p>
+You can find the two refresh images here : <br>
+<img src="./Create animated refresh button in Android   Pixelstech.net_files/ic_action_refresh1.png">&nbsp;<img src="./Create animated refresh button in Android   Pixelstech.net_files/ic_action_refresh2.png">
+</p>
+<p>Next in the layout xml file, we can create a button component by putting following codes:</p>
+<p style="background-color: #eeeeee; display: block; padding: 10px;">&nbsp;&nbsp;&nbsp; &lt;Button android:id="@+id/detail_refresh_btn"<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;android:layout_width="wrap_content"<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;android:layout_height="wrap_content"<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;android:layout_centerHorizontal="true"<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;android:text="@string/refresh" <br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;android:gravity="center"<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;android:drawableLeft="@drawable/progress"<br>&nbsp;&nbsp; &nbsp;/&gt;</p>
+<p>Then what you need to do is in your Activity class, you need to have the following codes to get the animated drawable on the button:</p>
+<p style="background-color: #eeeeee; display: block; padding: 10px;">Button refreshBtn=(Button)findViewById(R.id.detail_refresh_btn);<br>refreshBtn.setOnClickListener(detailRefreshClickListener);</p>
+<p style="background-color: #eeeeee; display: block; padding: 10px;">AnimationDrawable d=(AnimationDrawable)refreshBtn.<span style="color: #ff0000;">getCompoundDrawables()[0]</span>;</p>
+<p>Here <span style="color: #ff0000;">getCompoundDrawables()[0]</span> is mapping to the&nbsp;android:drawableLeft="<span style="color: #ff0000;">@drawable/progress</span>" in the layout xml above.&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>Finally, when you call</p>
+<p style="background-color: #eeeeee; display: block; padding: 10px;">d.start();</p>
+<p>You will have the animated drawable animate now.</p>
+<p>You can use d.start() and d.stop() to control the start and stop of animation.</p>
+<p>Hope this will help those who want to create regresh button with an animated spinner on it.</p>     </div>
+     <div id="article_meta_information_zone">
+      <div>
+      <center>
+      <!-- Generate PDF -->
+      <a href="http://www.pixelstech.net/backstage/article_pdf_generator.php?article_id=1351875079" class="link_btn" target="_blank" title="Generate PDF">Save as PDF</a>
+      <!--  Mark as read button -->
+            <a href="javascript:;" title="Mark as read" class="link_btn" id="read_button" article_id="1351875079" name="mark_read">Mark as read</a>
+      <input type="hidden" name="num" value="0">
+                  <a href="javascript:;" title="Mark as important" class="link_btn" id="important_button" article_id="1351875079" name="mark_important">Mark as important</a>
+      <input type="hidden" name="important" value="0">
+            <img src="./Create animated refresh button in Android   Pixelstech.net_files/help.gif" class="help_icon" name="help_icon" title="Click to show Mark as read help">
+      <div id="read_help_window" class="round_corner">
+      	  <div class="control_panel"><img src="./Create animated refresh button in Android   Pixelstech.net_files/close.gif" align="right" id="helpWindowCloseBtn" title="Close"></div>
+      	  <div id="read_help_panel">
+      	      By clicking the "Mark as read" button, this article will be marked as read. It will be 
+      	      removed from the homepage's latest news and the article list on the "Technical article" page
+      	      in following visits and it will be put to your read list which you can find in "Amin-&gt;Article 
+      	      read list". There you can unmark the read articles.<br>
+      	      By clicking the "Mark as important" button, this article will be put to your important article 
+      	      list which you can find in "Amin-&gt;Article important list". Later when you want reread this 
+      	      article, it's easier for you to find it by checking the "Article important list".
+      	  </div>	
+      </div>
+      </center>
+      </div>
+     <p>
+     <!--Tag section-->
+	 Tags&nbsp;:&nbsp;<a href="http://www.pixelstech.net/search.php?key_word=Animation">Animation</a>,<a href="http://www.pixelstech.net/search.php?key_word=Spinner">Spinner</a>,<a href="http://www.pixelstech.net/search.php?key_word=Refresh+button">Refresh button</a>,<a href="http://www.pixelstech.net/search.php?key_word=Android">Android</a> &nbsp;&nbsp;Read(8706) Comment(0)&nbsp;Version(52)
+     </p>
+	 <div id="share_btn_zone" class="share_btn_zone_fixed">
+     <p class="article_share_button">
+     </p><center>
+     	 <!--Facebook share-->
+     <script>function fbs_click(){u=location.href;t=document.title;
+	 window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
+     <a href="http://www.facebook.com/share.php?u=http%3A%2F%2Fwww.pixelstech.net%2Farticle%2Findex.php%3Fid%3D1351875079" onclick="return fbs_click()" target="_blank"><img src="./Create animated refresh button in Android   Pixelstech.net_files/facebook.png" alt="Share on Facebook" title="Share on facebook"></a>&nbsp;
+	 <!--Twitter share-->
+     <a href="http://twitter.com/home?status=Create+animated+refresh+button+in+Android%20http%3A%2F%2Fwww.pixelstech.net%2Farticle%2Findex.php%3Fid%3D1351875079%20via%20@PixelstechNet" title="Click to share this post on Twitter" target="_blank"><img src="./Create animated refresh button in Android   Pixelstech.net_files/twitter.png" alt="Share on Twitter" title="Share on twitter"></a>&nbsp;
+	 <!--Google +1 Button -->
+	 <a href="https://plus.google.com/share?url=http://www.pixelstech.net/article/index.php?id=1351875079" onclick="javascript:window.open(this.href, &#39;_blank&#39;,&#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600&#39;);return false;"><img src="./Create animated refresh button in Android   Pixelstech.net_files/google_plus.png" title="Share on Google+" alt="Share on Google+"></a>&nbsp;	
+	 <!--Sina Weibo -->
+	 <a href="http://v.t.sina.com.cn/share/share.php?url=http%3A%2F%2Fwww.pixelstech.net%2Farticle%2Findex.php%3Fid%3D1351875079&title=Create+animated+refresh+button+in+Android+via+%40PixelsTech" target="_blank"><img src="./Create animated refresh button in Android   Pixelstech.net_files/sina-weibo.png" title="Share on Weiboo" alt="Share on Weibo" style="width:32px;height:32px;"></a>&nbsp;
+	<!-- Reddit -->	
+	 <a href="http://reddit.com/submit?url=http%3A%2F%2Fwww.pixelstech.net%2Farticle%2Findex.php%3Fid%3D1351875079&title=Create+animated+refresh+button+in+Android" title="Share on Reddit" target="_blank"><img src="./Create animated refresh button in Android   Pixelstech.net_files/reddit.png" alt="Share on Reddit"></a>&nbsp;
+	 <!--Digg -->
+     <a href="http://www.digg.com/submit?phase=2&url=http%3A%2F%2Fwww.pixelstech.net%2Farticle%2Findex.php%3Fid%3D1351875079" target="_blank"><img src="./Create animated refresh button in Android   Pixelstech.net_files/digg.png" alt="Share on Digg" title="Share on Digg"></a>&nbsp;
+	 <!--Tumblr-->
+	 <a href="http://www.tumblr.com/share?v=3&u=http%3A%2F%2Fwww.pixelstech.net%2Farticle%2Findex.php%3Fid%3D1351875079&t=Create+animated+refresh+button+in+Android" target="_blank"><img src="./Create animated refresh button in Android   Pixelstech.net_files/tumblr.png" alt="Share on Tumblr" title="Share on Tumblr"></a>&nbsp;		 
+	 <!--Linkedln share-->
+     <a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.pixelstech.net%2Farticle%2Findex.php%3Fid%3D1351875079&title=Create%20animated%20refresh%20button%20in%20Android&source=http%3A%2F%2Fwww.pixelstech.net%2Farticle%2Findex.php%3Fid%3D1351875079" target="_blank"><img src="./Create animated refresh button in Android   Pixelstech.net_files/linkedin.png" title="Share on linkedln"></a>&nbsp;
+     <!--Delicious share-->
+     <a href="http://delicious.com/save" onclick="window.open(&#39;http://delicious.com/save?v=5&amp;noui&amp;jump=close&amp;url=&#39;+encodeURIComponent(&#39;http%3A%2F%2Fwww.pixelstech.net%2Farticle%2Findex.php%3Fid%3D1351875079&#39;)+&#39;&amp;title=&#39;+encodeURIComponent(&#39;Create animated refresh button in Android&#39;),&#39;delicious&#39;, &#39;toolbar=no,width=550,height=550&#39;); return false;"><img src="./Create animated refresh button in Android   Pixelstech.net_files/delicious.png" alt="Delicious" title="Share on delicious"></a>
+     </center>
+	 <p></p>
+	 </div>
+	 <div id="share_btn_hook"></div>
+     <p>
+     &nbsp;Previous : <a href="http://www.pixelstech.net/article/1351530797-How-big-is-sizeof-structure-">How big is sizeof structure?</a><br>&nbsp;Next : <a href="http://www.pixelstech.net/article/1351925385-Landing-page-optimization-%3A-Less-is-more">Landing page optimization : Less is more</a>      </p>
+     </div>
+     <p class="article_title_p article_index_title_p">&nbsp;&nbsp;::Related Articles</p>
+     <div id="article_related_list">
+	  	<ul class="related_article_ul">     	<li><a href="http://www.pixelstech.net/article/1320341901-Android-Hardware-Buttons-are-not-broken-let-me-tell-you-why" title="Android Hardware Buttons are not broken, let me tell you why"><img src="./Create animated refresh button in Android   Pixelstech.net_files/index_list_icon.gif">&nbsp;Android Hardware Buttons are not broken, let me tell you why</a></li>
+     	     	<li><a href="http://www.pixelstech.net/article/1373363524-Jelly-Bean-becomes-the-most-popular-Android-OS" title="Jelly Bean becomes the most popular Android OS"><img src="./Create animated refresh button in Android   Pixelstech.net_files/index_list_icon.gif">&nbsp;Jelly Bean becomes the most popular Android OS</a></li>
+     	     	<li><a href="http://www.pixelstech.net/article/1352034618-Add-ContextMenu-to-a-customized-View-in-Android" title="Add ContextMenu to a customized View in Android"><img src="./Create animated refresh button in Android   Pixelstech.net_files/index_list_icon.gif">&nbsp;Add ContextMenu to a customized View in Android</a></li>
+     	     	<li><a href="http://www.pixelstech.net/article/1349922409-Office-is-confirmed-to-be-on-iOS-and-Android" title="Office is confirmed to be on iOS and Android"><img src="./Create animated refresh button in Android   Pixelstech.net_files/index_list_icon.gif">&nbsp;Office is confirmed to be on iOS and Android</a></li>
+     	     	<li><a href="http://www.pixelstech.net/article/1349223718-Android-4-0%2B-occupies-quarter-of-Android-market" title="Android 4.0+ occupies quarter of Android market"><img src="./Create animated refresh button in Android   Pixelstech.net_files/index_list_icon.gif">&nbsp;Android 4.0+ occupies quarter of Android market</a></li>
+     	     	<li><a href="http://www.pixelstech.net/article/1372684854-Market-share-of-Android-approaches-70%25-globally" title="Market share of Android approaches 70% globally"><img src="./Create animated refresh button in Android   Pixelstech.net_files/index_list_icon.gif">&nbsp;Market share of Android approaches 70% globally</a></li>
+     	     	<li><a href="http://www.pixelstech.net/article/1353429150-6-amazing-HTML5-animation-effects" title="6 amazing HTML5 animation effects"><img src="./Create animated refresh button in Android   Pixelstech.net_files/index_list_icon.gif">&nbsp;6 amazing HTML5 animation effects</a></li>
+     	     	<li><a href="http://www.pixelstech.net/article/1378267358-Does-Android-team-like-to-eat-Kitkat-" title="Does  Android team like to eat Kitkat?"><img src="./Create animated refresh button in Android   Pixelstech.net_files/index_list_icon.gif">&nbsp;Does  Android team like to eat Kitkat?</a></li>
+     	     	<li><a href="http://www.pixelstech.net/article/1368328614-Android-socket-programming-example" title="Android socket programming example"><img src="./Create animated refresh button in Android   Pixelstech.net_files/index_list_icon.gif">&nbsp;Android socket programming example</a></li>
+     	     	<li><a href="http://www.pixelstech.net/article/1328614000-Game-Development-Essentials-%231---Don%E2%80%99t-use-inheritance-for-your-game-objects" title="Game Development Essentials #1 - Don’t use inheritance for your game objects"><img src="./Create animated refresh button in Android   Pixelstech.net_files/index_list_icon.gif">&nbsp;Game Development Essentials #1 - Don’t use inheritance for your game objects</a></li>
+     	</ul>     </div>
+     <p class="article_title_p article_index_title_p">&nbsp;&nbsp;::Comment Zone&nbsp;&nbsp;(Total <span class="selected_span" style="color:red;">0</span> comment)</p>
+     <div id="comment_div">
+     	     		<p style="padding-left:20px;font-size:20px;color:#777;">No comment for this article.</p>
+     	     </div>
+     <p class="article_title_p article_index_title_p">&nbsp;&nbsp;::Comment</p>
+	 		 
+     <form id="article_comment_form" action="http://www.pixelstech.net/backstage/comment_process.php" method="post" onsubmit="return verify_comment();">
+     <a name="comment_anchor"></a>
+     <input type="text" name="check_point" class="hidden_item" value=""><table style="width:739px;" cellpadding="10">
+     <input type="hidden" name="article_id" value="1351875079">
+	 <input type="hidden" name="client_user_id" value="">
+     <input type="hidden" name="reply_to" value="">
+     
+     <tbody><tr><td>Nickname&nbsp;<img src="./Create animated refresh button in Android   Pixelstech.net_files/help.gif" id="nickname_help"></td><td><input type="text" name="nickname" value="" size="20">&nbsp;<span id="commentor_reply_to"></span></td></tr>
+     <tr><td>Email&nbsp;<img src="./Create animated refresh button in Android   Pixelstech.net_files/help.gif" id="email_help"></td><td><input type="text" name="email" value="" size="40"></td></tr>
+     <tr><td>Comment</td><td><textarea name="comment" value="" style="width: 450px; height: 300px; overflow: auto; display: none;" id="comment" aria-hidden="true"></textarea><span role="application" aria-labelledby="comment_voice" id="comment_parent" class="mceEditor defaultSkin"><span class="mceVoiceLabel" style="display:none;" id="comment_voice">Rich Text Area</span><table role="presentation" id="comment_tbl" class="mceLayout" cellspacing="0" cellpadding="0" style="width: 450px; height: 300px;"><tbody><tr role="presentation" class="mceFirst"><td class="mceToolbar mceLeft mceFirst mceLast" role="toolbar"><div id="comment_toolbargroup" role="group" aria-labelledby="comment_toolbargroup_voice" tabindex="-1"><span role="application"><span id="comment_toolbargroup_voice" class="mceVoiceLabel" style="display:none;">Toolbar</span><table id="comment_toolbar1" class="mceToolbar mceToolbarRow1 Enabled" cellpadding="0" cellspacing="0" align="" role="presentation" tabindex="-1" aria-disabled="false" aria-pressed="false"><tbody><tr><td class="mceToolbarStart mceToolbarStartButton mceFirst"><span><!-- IE --></span></td><td style="position: relative"><a role="button" id="comment_bold" href="javascript:;" class="mceButton mceButtonEnabled mce_bold" onmousedown="return false;" onclick="return false;" aria-labelledby="comment_bold_voice" title="Bold (Ctrl+B)" tabindex="-1"><span class="mceIcon mce_bold"></span><span class="mceVoiceLabel mceIconOnly" style="display: none;" id="comment_bold_voice">Bold (Ctrl+B)</span></a></td><td style="position: relative"><a role="button" id="comment_italic" href="javascript:;" class="mceButton mceButtonEnabled mce_italic" onmousedown="return false;" onclick="return false;" aria-labelledby="comment_italic_voice" title="Italic (Ctrl+I)" tabindex="-1"><span class="mceIcon mce_italic"></span><span class="mceVoiceLabel mceIconOnly" style="display: none;" id="comment_italic_voice">Italic (Ctrl+I)</span></a></td><td style="position: relative"><a role="button" id="comment_underline" href="javascript:;" class="mceButton mceButtonEnabled mce_underline" onmousedown="return false;" onclick="return false;" aria-labelledby="comment_underline_voice" title="Underline (Ctrl+U)" tabindex="-1"><span class="mceIcon mce_underline"></span><span class="mceVoiceLabel mceIconOnly" style="display: none;" id="comment_underline_voice">Underline (Ctrl+U)</span></a></td><td style="position: relative"><a role="button" id="comment_strikethrough" href="javascript:;" class="mceButton mceButtonEnabled mce_strikethrough" onmousedown="return false;" onclick="return false;" aria-labelledby="comment_strikethrough_voice" title="Strikethrough" tabindex="-1"><span class="mceIcon mce_strikethrough"></span><span class="mceVoiceLabel mceIconOnly" style="display: none;" id="comment_strikethrough_voice">Strikethrough</span></a></td><td style="position: relative"><span class="mceSeparator" role="separator" aria-orientation="vertical" tabindex="-1"></span></td><td style="position: relative"><a role="button" id="comment_justifyleft" href="javascript:;" class="mceButton mceButtonEnabled mce_justifyleft" onmousedown="return false;" onclick="return false;" aria-labelledby="comment_justifyleft_voice" title="Align Left" tabindex="-1"><span class="mceIcon mce_justifyleft"></span><span class="mceVoiceLabel mceIconOnly" style="display: none;" id="comment_justifyleft_voice">Align Left</span></a></td><td style="position: relative"><a role="button" id="comment_justifycenter" href="javascript:;" class="mceButton mceButtonEnabled mce_justifycenter" onmousedown="return false;" onclick="return false;" aria-labelledby="comment_justifycenter_voice" title="Align Center" tabindex="-1"><span class="mceIcon mce_justifycenter"></span><span class="mceVoiceLabel mceIconOnly" style="display: none;" id="comment_justifycenter_voice">Align Center</span></a></td><td style="position: relative"><a role="button" id="comment_justifyright" href="javascript:;" class="mceButton mceButtonEnabled mce_justifyright" onmousedown="return false;" onclick="return false;" aria-labelledby="comment_justifyright_voice" title="Align Right" tabindex="-1"><span class="mceIcon mce_justifyright"></span><span class="mceVoiceLabel mceIconOnly" style="display: none;" id="comment_justifyright_voice">Align Right</span></a></td><td style="position: relative"><a role="button" id="comment_justifyfull" href="javascript:;" class="mceButton mceButtonEnabled mce_justifyfull" onmousedown="return false;" onclick="return false;" aria-labelledby="comment_justifyfull_voice" title="Align Full" tabindex="-1"><span class="mceIcon mce_justifyfull"></span><span class="mceVoiceLabel mceIconOnly" style="display: none;" id="comment_justifyfull_voice">Align Full</span></a></td><td style="position: relative"><a role="button" id="comment_link" href="javascript:;" class="mceButton mce_link mceButtonDisabled" onmousedown="return false;" onclick="return false;" aria-labelledby="comment_link_voice" title="Insert/Edit Link" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_link"></span><span class="mceVoiceLabel mceIconOnly" style="display: none;" id="comment_link_voice">Insert/Edit Link</span></a></td><td style="position: relative"><a role="button" id="comment_unlink" href="javascript:;" class="mceButton mce_unlink mceButtonDisabled" onmousedown="return false;" onclick="return false;" aria-labelledby="comment_unlink_voice" title="Unlink" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_unlink"></span><span class="mceVoiceLabel mceIconOnly" style="display: none;" id="comment_unlink_voice">Unlink</span></a></td><td style="position: relative"><span class="mceSeparator" role="separator" aria-orientation="vertical" tabindex="-1"></span></td><td style="position: relative"><a role="button" id="comment_sub" href="javascript:;" class="mceButton mceButtonEnabled mce_sub" onmousedown="return false;" onclick="return false;" aria-labelledby="comment_sub_voice" title="Subscript" tabindex="-1"><span class="mceIcon mce_sub"></span><span class="mceVoiceLabel mceIconOnly" style="display: none;" id="comment_sub_voice">Subscript</span></a></td><td style="position: relative"><a role="button" id="comment_sup" href="javascript:;" class="mceButton mceButtonEnabled mce_sup" onmousedown="return false;" onclick="return false;" aria-labelledby="comment_sup_voice" title="Superscript" tabindex="-1"><span class="mceIcon mce_sup"></span><span class="mceVoiceLabel mceIconOnly" style="display: none;" id="comment_sup_voice">Superscript</span></a></td><td style="position: relative"><span class="mceSeparator" role="separator" aria-orientation="vertical" tabindex="-1"></span></td><td style="position: relative"><div id="comment_bullist" role="button" tabindex="-1" aria-labelledby="comment_bullist_voice" aria-haspopup="true" aria-pressed="false"><table role="presentation" class="mceSplitButton mceSplitButtonEnabled mce_bullist" cellpadding="0" cellspacing="0" title="Insert/Remove Bulleted List"><tbody><tr><td class="mceFirst"><a role="button" id="comment_bullist_action" tabindex="-1" href="javascript:;" class="mceAction mce_bullist" onclick="return false;" onmousedown="return false;" title="Insert/Remove Bulleted List"><span class="mceAction mce_bullist"></span><span class="mceVoiceLabel mceIconOnly" id="comment_bullist_voice" style="display:none;">Insert/Remove Bulleted List</span></a></td><td class="mceLast"><a role="button" id="comment_bullist_open" tabindex="-1" href="javascript:;" class="mceOpen mce_bullist" onclick="return false;" onmousedown="return false;" title="Insert/Remove Bulleted List"><span class="mceOpen mce_bullist"><span style="display:none;" class="mceIconOnly" aria-hidden="true">▼</span></span></a></td></tr></tbody></table></div></td><td style="position: relative"><div id="comment_numlist" role="button" tabindex="-1" aria-labelledby="comment_numlist_voice" aria-haspopup="true" aria-pressed="false"><table role="presentation" class="mceSplitButton mceSplitButtonEnabled mce_numlist" cellpadding="0" cellspacing="0" title="Insert/Remove Numbered List"><tbody><tr><td class="mceFirst"><a role="button" id="comment_numlist_action" tabindex="-1" href="javascript:;" class="mceAction mce_numlist" onclick="return false;" onmousedown="return false;" title="Insert/Remove Numbered List"><span class="mceAction mce_numlist"></span><span class="mceVoiceLabel mceIconOnly" id="comment_numlist_voice" style="display:none;">Insert/Remove Numbered List</span></a></td><td class="mceLast"><a role="button" id="comment_numlist_open" tabindex="-1" href="javascript:;" class="mceOpen mce_numlist" onclick="return false;" onmousedown="return false;" title="Insert/Remove Numbered List"><span class="mceOpen mce_numlist"><span style="display:none;" class="mceIconOnly" aria-hidden="true">▼</span></span></a></td></tr></tbody></table></div></td><td style="position: relative"><span class="mceSeparator" role="separator" aria-orientation="vertical" tabindex="-1"></span></td><td style="position: relative"><a role="button" id="comment_outdent" href="javascript:;" class="mceButton mce_outdent mceButtonDisabled" onmousedown="return false;" onclick="return false;" aria-labelledby="comment_outdent_voice" title="Decrease Indent" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_outdent"></span><span class="mceVoiceLabel mceIconOnly" style="display: none;" id="comment_outdent_voice">Decrease Indent</span></a></td><td style="position: relative"><a role="button" id="comment_indent" href="javascript:;" class="mceButton mceButtonEnabled mce_indent" onmousedown="return false;" onclick="return false;" aria-labelledby="comment_indent_voice" title="Increase Indent" tabindex="-1"><span class="mceIcon mce_indent"></span><span class="mceVoiceLabel mceIconOnly" style="display: none;" id="comment_indent_voice">Increase Indent</span></a></td><td style="position: relative"><a role="button" id="comment_blockquote" href="javascript:;" class="mceButton mceButtonEnabled mce_blockquote" onmousedown="return false;" onclick="return false;" aria-labelledby="comment_blockquote_voice" title="Block Quote" tabindex="-1"><span class="mceIcon mce_blockquote"></span><span class="mceVoiceLabel mceIconOnly" style="display: none;" id="comment_blockquote_voice">Block Quote</span></a></td><td style="position: relative"><span class="mceSeparator" role="separator" aria-orientation="vertical" tabindex="-1"></span></td><td style="position: relative"><a role="button" id="comment_undo" href="javascript:;" class="mceButton mce_undo mceButtonDisabled" onmousedown="return false;" onclick="return false;" aria-labelledby="comment_undo_voice" title="Undo (Ctrl+Z)" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_undo"></span><span class="mceVoiceLabel mceIconOnly" style="display: none;" id="comment_undo_voice">Undo (Ctrl+Z)</span></a></td><td style="position: relative"><a role="button" id="comment_redo" href="javascript:;" class="mceButton mce_redo mceButtonDisabled" onmousedown="return false;" onclick="return false;" aria-labelledby="comment_redo_voice" title="Redo (Ctrl+Y)" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_redo"></span><span class="mceVoiceLabel mceIconOnly" style="display: none;" id="comment_redo_voice">Redo (Ctrl+Y)</span></a></td><td style="position: relative"><span class="mceSeparator" role="separator" aria-orientation="vertical" tabindex="-1"></span></td><td style="position: relative"><div id="comment_forecolor" role="button" tabindex="-1" aria-labelledby="comment_forecolor_voice" aria-haspopup="true"><table role="presentation" class="mceSplitButton mceSplitButtonEnabled mce_forecolor" cellpadding="0" cellspacing="0" title="Select Text Color"><tbody><tr><td class="mceFirst"><a role="button" id="comment_forecolor_action" tabindex="-1" href="javascript:;" class="mceAction mce_forecolor" onclick="return false;" onmousedown="return false;" title="Select Text Color"><span class="mceAction mce_forecolor"></span><span class="mceVoiceLabel mceIconOnly" id="comment_forecolor_voice" style="display:none;">Select Text Color</span><div id="comment_forecolor_preview" class="mceColorPreview" style="background-color: rgb(136, 136, 136);"></div></a></td><td class="mceLast"><a role="button" id="comment_forecolor_open" tabindex="-1" href="javascript:;" class="mceOpen mce_forecolor" onclick="return false;" onmousedown="return false;" title="Select Text Color"><span class="mceOpen mce_forecolor"><span style="display:none;" class="mceIconOnly" aria-hidden="true">▼</span></span></a></td></tr></tbody></table></div></td><td style="position: relative"><div id="comment_backcolor" role="button" tabindex="-1" aria-labelledby="comment_backcolor_voice" aria-haspopup="true"><table role="presentation" class="mceSplitButton mceSplitButtonEnabled mce_backcolor" cellpadding="0" cellspacing="0" title="Select Background Color"><tbody><tr><td class="mceFirst"><a role="button" id="comment_backcolor_action" tabindex="-1" href="javascript:;" class="mceAction mce_backcolor" onclick="return false;" onmousedown="return false;" title="Select Background Color"><span class="mceAction mce_backcolor"></span><span class="mceVoiceLabel mceIconOnly" id="comment_backcolor_voice" style="display:none;">Select Background Color</span><div id="comment_backcolor_preview" class="mceColorPreview" style="background-color: rgb(136, 136, 136);"></div></a></td><td class="mceLast"><a role="button" id="comment_backcolor_open" tabindex="-1" href="javascript:;" class="mceOpen mce_backcolor" onclick="return false;" onmousedown="return false;" title="Select Background Color"><span class="mceOpen mce_backcolor"><span style="display:none;" class="mceIconOnly" aria-hidden="true">▼</span></span></a></td></tr></tbody></table></div></td><td class="mceToolbarEnd mceToolbarEndButton mceLast"><span><!-- IE --></span></td></tr></tbody></table></span></div><a href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#" accesskey="z" title="Jump to tool buttons - Alt+Q, Jump to editor - Alt-Z, Jump to element path - Alt-X" onfocus="tinyMCE.getInstanceById(&#39;comment&#39;).focus();"><!-- IE --></a></td></tr><tr class="mceLast"><td class="mceIframeContainer mceFirst mceLast"><iframe id="comment_ifr" src="javascript:""" frameborder="0" allowtransparency="true" title="Rich Text AreaPress ALT-F10 for toolbar. Press ALT-0 for help" style="width: 100%; height: 277px; display: block;"></iframe></td></tr></tbody></table></span></td></tr>
+     <tr><td colspan="2" style="text-align:center;"><input type="submit" name="submit" value=" Comment " class="link_btn_30">
+                         <input type="reset" name="reset" value="Reset" class="link_btn_30">   
+						 <input type="hidden" name="ntime" value="1410946986">
+     </td></tr>
+     </tbody></table>
+     </form>
+	 	 </div>
+     <div id="article_page_right">
+     <!-- Google Advertisement -->
+     <center>
+        <script async="" src="./Create animated refresh button in Android   Pixelstech.net_files/adsbygoogle.js"></script>
+		<!-- ArticleIndexSideUpAsync -->
+		<ins class="adsbygoogle" style="display:inline-block;width:250px;height:250px" data-ad-client="ca-pub-7230278337279690" data-ad-slot="1611774365"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</center>
+    <p class="article_title_p" style="text-align:left;padding-left:10px;">::&nbsp;Follow us
+	</p><table cellpadding="5" style="width:100%;text-align:center;">
+	<tbody><tr>
+	<!-- Facebook -->
+	<td><a href="http://www.facebook.com/pages/Pixelstechnet/269344723109937" title="Find us on Facebook" target="_blank"><img src="./Create animated refresh button in Android   Pixelstech.net_files/find_us_on_facebook.jpg" class="button_image"></a></td>
+	<!--  Tweet follow -->
+	<td><a href="https://twitter.com/PixelstechNet" title="Follow us on Twitter" target="_blank"><img src="./Create animated refresh button in Android   Pixelstech.net_files/follow_us_on_twitter.jpg" class="button_image"></a></td>
+	</tr><tr>
+	<!-- Google+ follow -->
+	<td><a href="https://plus.google.com/111504132495593447634" title="Find us on Google+" target="_blank"><img src="./Create animated refresh button in Android   Pixelstech.net_files/find_us_on_google_plus.jpg"></a></td>
+	<td><a href="http://www.weibo.com/2643898200/profile?rightmod=1&wvr=5&mod=personinfo" title="Find us on Sina Weibo" target="_blank"><img src="./Create animated refresh button in Android   Pixelstech.net_files/find_us_on_sina_weibo.jpg"></a></td>	
+	</tr>
+	<tr>
+	<!-- Find us on Tumblr -->
+	<td><a href="http://www.tumblr.com/follow/PixelstechNet" title="Find us on Tumblr" target="_blank"><img src="./Create animated refresh button in Android   Pixelstech.net_files/find_us_on_tumblr.jpg"></a></td>
+	<!-- Follow us on Feedly -->
+	<td><a href="http://www.feedly.com/home#subscription/feed/http://pixelstech.net/feed.xml" title="Find us on Feedly" target="_blank"><img src="./Create animated refresh button in Android   Pixelstech.net_files/follow_us_on_feedly.png"></a></td>
+	</tr>
+	</tbody></table>
+	<p class="article_title_p" style="text-align:left;padding-left:10px;">::&nbsp;Other versions</p>
+		<table id="user_table" cellpadding="0" cellspacing="0">
+				<tbody><tr><td><img src="./Create animated refresh button in Android   Pixelstech.net_files/default.jpg"></td><td><div><a href="http://www.pixelstech.net/article/index.php?id=1351875079&user_id=stomanu" class="username_link " user_id="stomanu" article_id="1351875079">stomanu</a></div></td></tr>
+				<tr><td><img src="./Create animated refresh button in Android   Pixelstech.net_files/default.jpg"></td><td><div><a href="http://www.pixelstech.net/article/index.php?id=1351875079&user_id=Ceori" class="username_link " user_id="Ceori" article_id="1351875079">Ceori</a></div></td></tr>
+				<tr><td><img src="./Create animated refresh button in Android   Pixelstech.net_files/default.jpg"></td><td><div><a href="http://www.pixelstech.net/article/index.php?id=1351875079&user_id=maomao" class="username_link " user_id="maomao" article_id="1351875079">maomao</a></div></td></tr>
+				<tr><td><img src="./Create animated refresh button in Android   Pixelstech.net_files/default.jpg"></td><td><div><a href="http://www.pixelstech.net/article/index.php?id=1351875079&user_id=Ju" class="username_link " user_id="Ju" article_id="1351875079">Ju</a></div></td></tr>
+				<tr><td><img src="./Create animated refresh button in Android   Pixelstech.net_files/default.jpg"></td><td><div><a href="http://www.pixelstech.net/article/index.php?id=1351875079&user_id=giorgikh" class="username_link " user_id="giorgikh" article_id="1351875079">giorgikh</a></div></td></tr>
+				<tr><td><img src="./Create animated refresh button in Android   Pixelstech.net_files/default.jpg"></td><td><div><a href="http://www.pixelstech.net/article/index.php?id=1351875079&user_id=Nesrine.Hafien" class="username_link " user_id="Nesrine.Hafien" article_id="1351875079">Nesrine.Hafien</a></div></td></tr>
+				<tr><td><img src="./Create animated refresh button in Android   Pixelstech.net_files/default.jpg"></td><td><div><a href="http://www.pixelstech.net/article/index.php?id=1351875079&user_id=showket" class="username_link " user_id="showket" article_id="1351875079">showket</a></div></td></tr>
+				<tr><td><img src="./Create animated refresh button in Android   Pixelstech.net_files/default.jpg"></td><td><div><a href="http://www.pixelstech.net/article/index.php?id=1351875079&user_id=paolo.comitini.9" class="username_link " user_id="paolo.comitini.9" article_id="1351875079">paolo.comitini.9</a></div></td></tr>
+				<tr><td><img src="./Create animated refresh button in Android   Pixelstech.net_files/default.jpg"></td><td><div><a href="http://www.pixelstech.net/article/index.php?id=1351875079&user_id=jellyfish" class="username_link " user_id="jellyfish" article_id="1351875079">jellyfish</a></div></td></tr>
+				<tr><td><img src="./Create animated refresh button in Android   Pixelstech.net_files/default.jpg"></td><td><div><a href="http://www.pixelstech.net/article/index.php?id=1351875079&user_id=xiahilil" class="username_link " user_id="xiahilil" article_id="1351875079">xiahilil</a></div></td></tr>
+			</tbody></table>
+	<p class="more_p"><a href="http://www.pixelstech.net/article/article_version.php?article_id=1351875079" class="link_btn_30">View all</a></p>
+	
+     <p class="article_title_p" style="text-align:left;padding-left:10px;">::&nbsp;Recent articles</p>
+     <ul>
+          <li><a href="http://www.pixelstech.net/article/1409966488-Different-types-of-keystore-in-Java----JKS">Different types of keystore in Java -- JKS</a></li>
+          <li><a href="http://www.pixelstech.net/article/1409362470-What-to-put-on-whiteboard-during-an-interview">What to put on whiteboard during an interview</a></li>
+          <li><a href="http://www.pixelstech.net/article/1409222827-CRM-Approach---A-Well-Planed-Business-Strategy-Not-a-Mere-Technology">CRM Approach - A Well Planed Business Strategy Not a Mere Technology</a></li>
+          <li><a href="http://www.pixelstech.net/article/1408628032-The-Windows-8-1-Update-is-here%21-What-to-Expect-from-it-">The Windows 8.1 Update is here! What to Expect from it?</a></li>
+          <li><a href="http://www.pixelstech.net/article/1408524957-Generate-certificate-in-Java----3">Generate certificate in Java -- 3</a></li>
+          <li><a href="http://www.pixelstech.net/article/1408421221-Understanding-abstract-interface-in-Java">Understanding abstract interface in Java</a></li>
+          <li><a href="http://www.pixelstech.net/article/1408345768--Different-types-of-keystore-in-Java----Overview"> Different types of keystore in Java -- Overview</a></li>
+          <li><a href="http://www.pixelstech.net/article/1408152349-The-9-lines-of-code-of-Google">The 9 lines of code of Google</a></li>
+          <li><a href="http://www.pixelstech.net/article/1408022495-Email-Modular-Design-%E2%80%93-An-Overview">Email Modular Design – An Overview</a></li>
+          <li><a href="http://www.pixelstech.net/article/1407753655-A-completely-new-approach-to-surveillance---should-you-be-worried-">A completely new approach to surveillance - should you be worried?</a></li>
+          <li class="article_page_right_more_li"><a href="http://www.pixelstech.net/article.php?sortby=time">more&nbsp;►</a></li>
+     </ul>
+     <p class="article_title_p" style="text-align:left;padding-left:10px;">::&nbsp;Most read</p>
+     <ul>
+          <li><a href="http://www.pixelstech.net/article/1316540565-Cross-Browser-HTML5-Drag-and-Drop" title="Cross Browser HTML5 Drag and Drop">Cross Browser HTML5 Drag and Drop</a></li>
+          <li><a href="http://www.pixelstech.net/article/1333543453-Sony-is-to-release-PlayStation4-in-2015" title="Sony is to release PlayStation4 in 2015">Sony is to release PlayStation4 in 2015</a></li>
+          <li><a href="http://www.pixelstech.net/article/1346744145-GCC-is-compiled-with-C%2B%2B-compiler" title="GCC is compiled with C++ compiler">GCC is compiled with C++ compiler</a></li>
+          <li><a href="http://www.pixelstech.net/article/1333969280-TIOBE-%3A-C-overtakes-Java-as-the-No-1-programming-language" title="TIOBE : C overtakes Java as the No.1 programming language">TIOBE : C overtakes Java as the No.1 programming language</a></li>
+          <li><a href="http://www.pixelstech.net/article/1315406969-5-Free-Open-Source-Chat-Applications-For-Developers" title="5 Free Open Source Chat Applications For Developers">5 Free Open Source Chat Applications For Developers</a></li>
+          <li><a href="http://www.pixelstech.net/article/1320122195-Great-code-is-written-twice-%28or-more%29" title="Great code is written twice (or more)">Great code is written twice (or more)</a></li>
+          <li><a href="http://www.pixelstech.net/article/1335686357-Which-programming-language-should-I-learn-first-" title="Which programming language should I learn first?">Which programming language should I learn first?</a></li>
+          <li><a href="http://www.pixelstech.net/article/1309350852-Why-PHP-is-%28so-much%29-better-than-Ruby-" title="Why PHP is (so much) better than Ruby?">Why PHP is (so much) better than Ruby?</a></li>
+          <li><a href="http://www.pixelstech.net/article/1337448434-Disposable-Email-address" title="Disposable Email address">Disposable Email address</a></li>
+          <li><a href="http://www.pixelstech.net/article/1334467373-Is-Ubuntu-becoming-a-big-name-in-enterprise-Linux-servers-" title="Is Ubuntu becoming a big name in enterprise Linux servers?">Is Ubuntu becoming a big name in enterprise Linux servers?</a></li>
+          <li class="article_page_right_more_li"><a href="http://www.pixelstech.net/article.php?sortby=read_count">more&nbsp;►</a></li>
+     </ul>
+	<!-- Write new article -->
+	<p class="article_title_p" style="text-align:left;padding-left:10px;">::&nbsp;Contribute</p>
+	<div>
+		<div id="article_index_contribute_div">
+		Want to share with the world your understanding about technology? Want to record the process you solve a technical problem? Want to make the world benefit from your understanding and solution?  Write them down. <b><font color="#448855">You make the world better, the world makes us better.</font></b>
+		</div>
+		<p></p><center><a href="http://www.pixelstech.net/admin.php?page_id=admin/file_generator" title="Create new article" class="link_btn_30">Write article</a></center><p></p>
+	</div>
+	<script async="" src="./Create animated refresh button in Android   Pixelstech.net_files/adsbygoogle.js"></script>
+	<!-- ArticleSideBottom -->
+	<ins class="adsbygoogle" style="display:inline-block;width:250px;height:250px" data-ad-client="ca-pub-7230278337279690" data-ad-slot="1887962763"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+     </div>
+	 <!--  Alexa Rank -->
+     <center>
+     <a href="http://www.alexa.com/siteinfo/pixelstech.net" style="visibility:hidden;display:none;"><a href="http://www.alexa.com/data/details/main?url=http://pixelstech.net" class="AlexaSiteStatsWidget"><img src="./Create animated refresh button in Android   Pixelstech.net_files/s.gif" border="0" alt="Alexa Certified Traffic Ranking for pixelstech.net"></a><script type="text/javascript" language="JavaScript" src="./Create animated refresh button in Android   Pixelstech.net_files/a"></script></a>
+     </center>
+     <div id="back_to_top_window">
+		<a href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#top"><img src="./Create animated refresh button in Android   Pixelstech.net_files/BackToTop.gif" title="Back to top" alt="Back to top" class="transparent_icon"></a>
+	 </div>
+</div>
+<div id="footer">
+<hr>
+<div>
+	<div class="col">
+		<h5>ABOUT</h5>
+		<ul class="ul_no_style footer_ul">
+			<li><a href="http://www.pixelstech.net/aboutus.php" title="About us">About us</a></li>
+			<li><a href="http://www.pixelstech.net/contactus.php" title="Contact us">Contact us</a></li>
+			<li><a href="http://www.pixelstech.net/ad.php" title="Advertisements">Advertisements</a></li>
+		</ul>
+	</div>
+
+	<div class="col">
+		<h5>HOW IT WORKS</h5>
+		<ul class="ul_no_style footer_ul">
+			<li><a href="http://www.pixelstech.net/document/article_read_help.php" title="Article read help">Read help</a></li>
+			<li><a href="http://www.pixelstech.net/article_post_help.php" title="Article post help">Post help</a></li>
+			<li><a href="http://www.pixelstech.net/guideline.php" title="Article guideline">Article guideline</a></li>	
+			<li><a href="http://www.pixelstech.net/topic_guideline.php" title="Topic guideline">Topic guideline</a></li>
+		</ul>
+	</div>
+
+	<div class="col">
+		<h5>FOLLOW US</h5>
+		<ul class="ul_no_style footer_ul">
+			<li><a href="http://www.weibo.com/2643898200/profile?rightmod=1&wvr=5&mod=personinfo" title="Sina weibo">Weibo</a></li>
+			<li><a href="http://www.facebook.com/pages/Pixelstechnet/269344723109937" title="Facebook">Facebook</a></li>
+			<li><a href="https://twitter.com/PixelstechNet" title="Twitter">Twitter</a></li>
+			<li><a href="https://plus.google.com/110249243541142163727" title="Google+">Google+</a></li>
+		</ul>
+	</div>
+
+	<div class="col">
+		<h5>LEGAL</h5>
+		<ul class="ul_no_style footer_ul">
+			<li><a href="http://www.pixelstech.net/privacy.php" title="Privacy polocy">Privacy policy</a></li>
+			<li><a href="http://www.pixelstech.net/termofservice.php" title="Terms of service">Terms of service</a></li>
+		</ul>
+	</div>
+	
+	<div class="col">
+		<h5>FEEDBACK</h5>
+		<ul class="ul_no_style footer_ul">
+			<li><a href="http://www.pixelstech.net/qanda.php" title="FAQ">FAQ</a></li>
+			<li><a href="http://www.pixelstech.net/bug_report.php" title="Bug report">Bug report</a></li>
+			<li><a href="http://www.pixelstech.net/feedback.php" title="Feedback">Feedback</a></li>
+		</ul>
+	</div>
+
+	<div class="col copyright_col">
+	<center><img src="./Create animated refresh button in Android   Pixelstech.net_files/pixelstech_64.png" alt="PixelsTech logo" title="PixelsTech logo"></center>
+    ©2014 PixelsTech.net All rights reserved
+   	</div>
+</div>
+<div style="position:fixed;z-index:6;bottom:20px;right:20px;text-align:center;">
+<img src="./Create animated refresh button in Android   Pixelstech.net_files/wechatqrcode.jpeg" alt="Follow us on WeChat" title="Scan to follow us on WeChat"><br>
+<a href="http://www.pixelstech.net/feedback.php" title="Feedback to us"><img src="./Create animated refresh button in Android   Pixelstech.net_files/suggestion.png" alt="Feedback"></a></div>
+</div>
+</div><script type="text/javascript" src="./Create animated refresh button in Android   Pixelstech.net_files/main(1).js"></script>
+<script type="text/javascript" src="./Create animated refresh button in Android   Pixelstech.net_files/nprogress.js"></script>
+<script type="text/javascript">
+NProgress.start();
+</script>
+<script type="text/javascript" src="./Create animated refresh button in Android   Pixelstech.net_files/jObject.js"></script>
+<script type="text/javascript" src="./Create animated refresh button in Android   Pixelstech.net_files/shCore.js"></script>
+<script type="text/javascript" src="./Create animated refresh button in Android   Pixelstech.net_files/shAutoloader.js"></script>
+<script type="text/javascript" src="./Create animated refresh button in Android   Pixelstech.net_files/article_index.js"></script><div class="help_panel round_corner shadow"><div class="out_arrow"></div><div class="in_arrow"></div><div></div></div>
+<script type="text/javascript" src="./Create animated refresh button in Android   Pixelstech.net_files/ZeroClipboard.min.js"></script>
+<script type="text/javascript" src="./Create animated refresh button in Android   Pixelstech.net_files/article_processor.js"></script>
+<script type="text/javascript" src="./Create animated refresh button in Android   Pixelstech.net_files/tiny_mce.js"></script>
+<script type="text/javascript">
+	tinyMCE.init({
+		// General options
+		mode : "textareas",
+		theme : "advanced",
+		plugins : "autolink,lists,pagebreak,emotions,inlinepopups,preview,paste,directionality,noneditable,nonbreaking,xhtmlxtras,advlist",
+	
+		// Theme options
+		theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull",
+		theme_advanced_buttons1_add : "link,unlink,|,sub,sup,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,forecolor,backcolor",
+		theme_advanced_buttons2 : "",
+		theme_advanced_toolbar_location : "top",
+		theme_advanced_toolbar_align : "left",
+		theme_advanced_statusbar_location : "none",
+		theme_advanced_resizing : true,
+
+		// Drop lists for link/image/media/template dialogs
+		//external_link_list_url : "lists/link_list.js",
+	});	
+	
+	var windowOnload=window.onload;
+	window.onload=function(){
+		windowOnload();
+		NProgress.done();
+	};
+</script>
+
+<div id="article_processor_menu"><ul style="display: none; visibility: hidden;"><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"></span>Save<span style="float:right;padding-right:5px;font-weight:normal;">Shift+S</span></a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"></span>Bookmark<span style="float:right;padding-right:5px;font-weight:normal;">Shift+B</span></a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"></span>Open link</a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"></span>Open in new window</a></li><li style="list-style:none;"><a href="javascript:void();">Share to...<span style="float:right;padding-right:5px;">►</span></a><ul class="sub_menu" style="display: none; visibility: hidden;"><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"><img src="./Create animated refresh button in Android   Pixelstech.net_files/facebook(1).png"></span>Facebook</a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"><img src="./Create animated refresh button in Android   Pixelstech.net_files/twitter(1).png"></span>Twitter</a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"><img src="./Create animated refresh button in Android   Pixelstech.net_files/google_plus(1).png"></span>Google+</a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"><img src="./Create animated refresh button in Android   Pixelstech.net_files/sina-weibo(1).png"></span>Sina Weibo</a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"><img src="./Create animated refresh button in Android   Pixelstech.net_files/reddit(1).png"></span>Reddit</a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"><img src="./Create animated refresh button in Android   Pixelstech.net_files/digg(1).png"></span>Digg</a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"><img src="./Create animated refresh button in Android   Pixelstech.net_files/tumblr(1).png"></span>Tumblr</a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"><img src="./Create animated refresh button in Android   Pixelstech.net_files/linkedin(1).png"></span>LinkedIn</a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"><img src="./Create animated refresh button in Android   Pixelstech.net_files/delicious(1).png"></span>Delicious</a></li></ul></li><li style="height:5px;list-style:none;"><hr class="menu_separator"></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#" id="menu_copy_link"><span class="menu_item_icon_span"></span>Copy</a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"></span>Highlight<span style="float:right;padding-right:5px;font-weight:normal;">Shift+H</span></a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"></span>Unhighlight</a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"></span>Add tag</a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"></span>Edit tag</a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"></span>Remove tag</a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"></span>Clear all</a></li><li style="height:5px;list-style:none;"><hr class="menu_separator"></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"></span>Refresh</a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"></span>Help?</a></li><li style="display: none; visibility: hidden;"><a class="menu_enabled" href="http://www.pixelstech.net/article/1351875079-Create-animated-refresh-button-in-Android#"><span class="menu_item_icon_span"></span>About</a></li></ul></div><div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" data-clipboard-ready="true" style="position: absolute; left: -9999px; top: -9999px; width: 15px; height: 15px; z-index: 9999;">      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="global-zeroclipboard-flash-bridge" width="100%" height="100%">         <param name="movie" value="/js/plugin/ZeroClipboard/ZeroClipboard.swf?nocache=1410947030656">         <param name="allowScriptAccess" value="sameDomain">         <param name="scale" value="exactfit">         <param name="loop" value="false">         <param name="menu" value="false">         <param name="quality" value="best">         <param name="bgcolor" value="#ffffff">         <param name="wmode" value="transparent">         <param name="flashvars" value="">         <embed src="/js/plugin/ZeroClipboard/ZeroClipboard.swf?nocache=1410947030657" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="100%" height="100%" name="global-zeroclipboard-flash-bridge" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="" scale="exactfit">                </object></div></body><iframe allowtransparency="true" src="./Create animated refresh button in Android   Pixelstech.net_files/top.htm" frameborder="0" id="abs-top-frame" style="position: fixed; z-index: 4294967295; overflow: hidden; top: 0px; left: 0px; right: 0px; width: 138px; height: 13px; max-height: none; min-height: 0px; margin: 0px auto; padding: 0px; border: 0px; display: block; background-color: transparent;"></iframe></html>

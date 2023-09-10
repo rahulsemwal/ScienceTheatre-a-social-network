@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+
+#sidebar_right{
+	width:14.5%;
+	height: auto;
+/*background-color:#081841;*/
+	margin-top:0.4%;
+	color:#399;
+	/*border-left:#399 inset thin;*/
+	float:right;
+	position:fixed;
+	right:0;/*breaks the dropdown menu*/
+	
+	/*-webkit-opacity:color .3;*/
+	/*display:block;*/
+	}
+#sidebar_right .single_icon{
+	width:98%;
+	height:auto;
+	margin:1% 1% 1% 1%; 
+	background-color:#000000;
+	}
+#sidebar_right .single_icon:hover{
+	opacity:.8;
+	width:96%;
+	margin:2% 2% 2% 2%; 
+	
+	}	
+#sidebar_right .double_icon{
+	width:48%;
+	height:auto;
+	margin:1% 1% 1% 1%;
+	float:left;
+	
+	}		
+#sidebar_right .double_icon:hover{
+	opacity:.8;
+	width:46%;
+	margin:2% 2% 2% 2%;
+	}	
+	
+/*media queries goes here updated on march14,2015*/	
+@media screen and (max-width:800px){
+	
+	
+#sidebar_right{
+	width:100%;
+	height:500px;
+/*background-color:#081841;*/
+	margin-top:0.4%;
+	color:#399;
+	/*border-left:#399 inset thin;*/
+	float:none !important;
+	position:static;
+	right:0;/*breaks the dropdown menu*/
+	overflow-y:visible;
+	/*-webkit-opacity:color .3;*/
+	/*display:block;*/
+	}
+	
+	
+	
+	
+	}

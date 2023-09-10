@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	padding:0;
+	margin:0;
+	overflow-y:scroll;
+	font-family:arial;
+	font-size:18px;}
+#header{
+	width:100%;
+	height:40px;
+	background-color:rgb(24,145,190);
+	margin:auto;}
+#nav{
+	background-color:#222;
+}
+#new_wrapper{
+	width:950px;
+	margin:0 auto;
+	text-align:left;	
+	}
+	#nav ul{
+		list-style-type:none;
+		margin:0;
+		padding:0;
+		position:relative;
+	}
+	#nav ul li{
+		display:inline-block;
+	}
+	#nav ul li:hover{
+		background-color:#333;
+	}
+	#nav ul li a,visited{
+		color:#ccc;
+		display:block;
+		padding:15px;
+		text-decoration:none;}
+	#nav ul li a:hover{
+			color:#099;
+			text-decoration:none;
+			}
+#nav ul li:hover ul{
+	display:block;
+}
+#nav ul ul{
+	display:none;
+	position:absolute;
+	background-color:#222;
+	}
+#nav ul ul li{
+	display:block}
+#nav ul ul li a,visited{
+	
+color:#ccc;
+}
+#nav ul ul li a:hover{
+	color:#099;
+}
+#main{
+	margin-top:1%;
+	width:50%;
+	margin-left:28%;
+	margin-right:10%;
+	margin-bottom:20%;
+	height:600px;
+	background-color:#960;
+	float:center;}
+#query{
+	width:100%;
+	height:60%;
+	margin-top:auto;
+	background-color:#099;
+	
+}
+	
+	
+	
